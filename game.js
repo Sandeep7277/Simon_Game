@@ -37,6 +37,7 @@ $(document).ready(function(){
                 $("#level-title").html("Game over, Press a key to restart game");
                 gamePattern=[];
                 userClickedPattern=[];
+                $("#play_btn").css("opacity","1");
             }else{
                 var matched=true;
                 for(var i=0; i<gamePattern.length; i++){
@@ -56,7 +57,13 @@ $(document).keypress(function(){
     if(level===0){
     nextSequence();
     }
-})  
+}) 
+$("#play_btn").click(function(){
+    if(level===0){
+    nextSequence();
+    $(this).css("opacity","0.3");
+    } 
+}) 
 })
 
 function pressed(color){
